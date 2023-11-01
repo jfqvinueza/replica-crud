@@ -2,6 +2,7 @@ package com.inicio.jimmy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,5 +29,10 @@ public class UserController {
     @GetMapping("/{id}/")
     public User findById(@PathVariable long id) {
         return userService.fingById(id);
+    }
+
+    @DeleteMapping("/{id}/")
+    public void deleteById(@PathVariable long id){
+        userService.deleteById(id);
     }
 }

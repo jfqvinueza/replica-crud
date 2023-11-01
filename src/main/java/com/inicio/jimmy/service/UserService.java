@@ -18,4 +18,8 @@ public class UserService {
     public User fingById(long id) {
         return userRepository.findById(id).orElse(null);
     }
+
+    public void deleteById(long id) {
+        userRepository.deleteById(id);
+    }
 }
